@@ -1,22 +1,18 @@
 #!/usr/bin/env bash
-# Display numbers from 1 to 20 with specific messages for certain iterations using a case statement.
+# Writes a Bash script that displays numbers from 1 to 20 and:
+#   displays 4 and then bad luck from China for the 4th loop iteration
+#   displays 9 and then bad luck from Japan for the 9th loop iteration
+#   displays 17 and then bad luck from Italy for the 17th loop iteration
 
-counter=1
+c=1
 
-while [ $counter -le 20 ]; do
-    case $counter in
-        4)
-            echo "$counter and then bad luck from China"
-            ;;
-        9)
-            echo "$counter and then bad luck from Japan"
-            ;;
-        17)
-            echo "$counter and then bad luck from Italy"
-            ;;
-        *)
-            echo $counter
-            ;;
+while [ $c -le 20 ]; do
+    case $c in
+        4) echo "$c, bad luck China" ;;
+        9) echo "$c, bad luck Japan" ;;
+        17) echo "$c, bad luck Italy" ;;
+        *) echo $c ;;
     esac
-    ((counter++))
+    ((c++))
 done
+
