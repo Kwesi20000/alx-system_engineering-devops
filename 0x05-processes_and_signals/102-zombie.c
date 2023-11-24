@@ -43,7 +43,7 @@ int main(void)
 			exit(EXIT_SUCCESS);
 		}
 	}
-	
+
 	infinite_while();
 
 	return (0);
