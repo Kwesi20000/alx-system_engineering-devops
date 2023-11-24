@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script displays a list of currently running processes with hierarchy
+
+# Using the ps command to display processes with full format, including process hierarchy
+ps aux --forest
