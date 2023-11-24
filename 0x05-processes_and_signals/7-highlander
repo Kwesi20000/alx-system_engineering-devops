@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# This script stops the 7-highlander process when receiving a SIGTERM signal
+
+# Function to handle SIGTERM signal
+terminate() {
+    echo "Stopping 7-highlander process"
+    # Finding the PID of the 7-highlander process
+    pid=$(pgrep -f "7-highlander")
+
+    # Checking if the process is running
+    if [ -n "$pid" ]; then
+        kill "$pid"
+        echo "7-highlander process stopped"
+    else
+        echo "7-highlander process is not running"
+    fi
+
+    exit 0
+}
+
+# Registering the terminate function to handle SIGTERM
+trap terminate SIGTERM
+
+# Infinite loop with sleep 2 between iterations
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
