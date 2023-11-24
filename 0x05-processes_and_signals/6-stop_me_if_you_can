@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 # This script stops the 4-to_infinity_and_beyond process without using kill
 
-# Finding the PID of the process
-pid=$(pgrep -f "4-to_infinity_and_beyond")
-
-# Checking if the process is running
-if [ -n "$pid" ]; then
-    echo "Stopping 4-to_infinity_and_beyond process (PID: $pid)"
-    pkill -P "$pid"
-else
-    echo "4-to_infinity_and_beyond process is not running"
-fi
+while true
+do 
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'echo "I am invincible!!!"' SIGTERM
+done
