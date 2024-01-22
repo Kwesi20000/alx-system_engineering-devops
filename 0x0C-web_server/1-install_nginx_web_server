@@ -1,21 +1,12 @@
 #!/usr/bin/env bash
-# Installs nginx on your web-01 server
-# Nginx should listening on port 80
-# When querying Nginx at its root / with a
-# GET request (requesting a page) using curl,
-# it must return a page that contains the string Hello World!
+# Installs nginx on web server
 
-# Updates the package list
 sudo apt-get update
+sudo apt-get install nginx
+sudo ufw 'Nginx HTTP'
 
-# Installs Nginx
-sudo apt-get -y install nginx
+echo 'Hello World!'  | sudo tee /var/www/html/index.html
 
-# Configures Nginx to listen on port 80
-sudo sed -i 's/80 default_server/80/g' /etc/nginx/sites-available/default
+sudo nginx -t
 
-# Creates a page with "Hello World!" message
-echo "Hello World!" | sudo tee /var/www/html/index.html
-
-# Restarts Nginx
-sudo service nginx start
+sudo service nginx reload
