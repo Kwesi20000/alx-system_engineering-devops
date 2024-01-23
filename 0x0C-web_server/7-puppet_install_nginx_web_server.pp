@@ -1,4 +1,4 @@
-# This 
+# This automates my work using puppet 
 
 package { 'nginx':
     ensure  => installed,
