@@ -12,7 +12,6 @@ file_line { 'install':
 }
 
 file { '/var/www/html/index.html':
-  ensure  => present,
   content => 'Hello World!',
 }
 
