@@ -4,9 +4,9 @@ package { 'nginx':
     ensure  => installed,
 }
 
-file_line { 'add-redirect-rule':
+file_line { 'install':
   ensure  => present,
-  path    => '/etc/nginx/sites-available/default',
+  path    => '/etc/nginx/sites-enabled/default',
   line    => 'rewrite ^ https://github.com/Kwesi20000 permanent;',
   after   => 'listen 80 default_server;',
 }
