@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Configuring the wb-01 to respond to an HTTP header
+
+# this updates packages
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# this creates an index page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# this performs redirection
+new_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/Kwesi2000 permanent;
+
+sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
+
+# this creates a custom error page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+# a custom HTTP response header
+sudo sed -i "server_name _;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+
+# testing for styntax errors
+sudo nginx -t 
+
+# restarting server
+sudo service nginx restart
