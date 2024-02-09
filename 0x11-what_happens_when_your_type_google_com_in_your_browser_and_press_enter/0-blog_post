@@ -1,0 +1,21 @@
+Title: Demystifying the Journey of a URL: What Happens When You Type https://www.google.com in Your Browser?
+
+Have you ever wondered what really happens behind the scenes when you type a URL into your browser and hit Enter? The process seems simple from a user's perspective, but beneath the surface lies a complex web of interactions involving various components of the internet infrastructure. Let's unravel the journey of a URL, focusing specifically on what happens when you type https://www.google.com into your browser.
+
+1. DNS Request: The journey begins with a Domain Name System (DNS) request. When you type "www.google.com" into your browser, your computer needs to translate this human-readable domain name into an IP address, which is the numerical address that identifies the location of the server hosting Google's website. Your computer sends a DNS query to a DNS server, typically provided by your Internet Service Provider (ISP) or configured elsewhere, to resolve the domain name to an IP address.
+
+2. TCP/IP: Once your computer obtains the IP address of www.google.com from the DNS server, it initiates a connection using the Transmission Control Protocol (TCP) and Internet Protocol (IP). TCP ensures that data packets are reliably transmitted between your computer and the Google server, while IP handles routing and addressing to ensure the packets reach their destination across the internet.
+
+3. Firewall: Before establishing a connection with the Google server, your data packets may need to pass through a firewall, which acts as a barrier to filter and monitor incoming and outgoing network traffic based on predefined security rules. The firewall ensures that only authorized and safe connections are allowed while blocking potentially harmful traffic.
+
+4. HTTPS/SSL: As the connection is established, your browser and the Google server negotiate the use of HTTPS (Hypertext Transfer Protocol Secure) for secure communication. This involves the exchange of SSL (Secure Sockets Layer) or TLS (Transport Layer Security) certificates, which encrypt the data transmitted between your browser and the server, preventing eavesdropping and tampering by malicious actors.
+
+5. Load-Balancer: Google, being a massive platform serving billions of users, employs load balancers to distribute incoming traffic across multiple servers to ensure optimal performance and reliability. A load balancer acts as a traffic manager, distributing requests evenly among backend servers based on various factors such as server health, current load, and proximity to the user.
+
+6. Web Server: Once the request reaches one of Google's web servers, it is processed by specialized software designed to handle HTTP requests and serve web pages. Google utilizes highly efficient and scalable web server technologies to deliver search results and other services to users worldwide.
+
+7. Application Server: In the case of Google, various application servers are employed to handle dynamic content generation, user authentication, personalized search results, and other functionalities. These servers execute the backend code responsible for processing user requests and generating the appropriate responses.
+
+8. Database: Behind the scenes, Google's services rely on vast databases to store and retrieve information such as indexed web pages, user preferences, and historical data. When you perform a search on Google, for instance, the query is processed by application servers, which interact with backend databases to retrieve relevant search results.
+
+In summary, the journey of a URL like https://www.google.com involves a series of intricate steps, from DNS resolution to database queries, each orchestrated seamlessly to deliver the web content you requested. Understanding this process provides valuable insight into the inner workings of the internet and the technologies that power our online experiences. So the next time you type a URL into your browser, remember the complex journey it undertakes before the webpage magically appears on your screen.
