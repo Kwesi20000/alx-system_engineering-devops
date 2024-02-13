@@ -1,5 +1,6 @@
 # This configures a ufw firewall to block all incoming traffic
 
+sudo apt install ufw
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo allow 22/tcp
