@@ -1,19 +1,23 @@
 #!/usr/bin/python3
-"""A module that returns the number of subscribers"""
-
+'''
+    A module that contains the function number_of_subscribers
+'''
 import requests
+from sys import argv
 
 
 def number_of_subscribers(subreddit):
-    """Function returns the number of subscribers"""
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) \
-        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 \
-            Mobile Safari/537.36"
-    }
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    if response.status_code == 404:
+    '''
+       Function returns the number of subscribers for a given subreddit
+    '''
+    user = {'User-Agent': 'Lizzie'}
+    url = requests.get('https://www.reddit.com/r/{}/about.json'
+                       .format(subreddit), headers=user).json()
+    try:
+        return url.get('data').get('subscribers')
+    except Exception:
         return 0
-    results = response.json().get("data")
-    return results.get("subscribers")
+
+
+if __name__ == "__main__":
+    number_of_subscribers(argv[1])
